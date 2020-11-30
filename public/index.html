@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Proyecto Parqueo</title>
+
+	<link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="main.css">
+	<link rel="icon" type="image/png" href="../images/logo.png" />
+	<style>
+		body {
+			margin:0;
+			padding:0;
+		}
+		canvas {
+			margin:auto;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="chat"> 
+	<img class="avatar" src="../images/logo.jpeg" alt="Logo Parqueo">
+	<h1>Registro Ingreso y Salida de AutoMoviles</h1>
+	</div>
+	
+	<div id="chat-container">
+        <div id="chat-window">
+            <div id="output"></div>
+            <div id="warning"></div>
+            <div id="actions"></div>
+
+        </div>
+	</div>
+	
+</body>
+<script src="/socket.io/socket.io.js"></script>
+<script src="sketch.js"></script>
+</html>

@@ -1,3 +1,7 @@
+//Este codigo nos permitia girar un motor paso a paso
+//de acuerdo a los valores que recibiamos por la comunicacion serial
+//Ejm: Dato de entrada: 35 --> Grados a Girar 35Â°
+
 //definicion de pines
 const int pinMotor1 = 8;    // 28BYJ48 - In1
 const int pinMotor2 = 9;    // 28BYJ48 - In2
@@ -49,21 +53,21 @@ void setup() {
 
 void loop() {
   long duracion, distancia ;
-  digitalWrite(trigPin, LOW);        // Nos aseguramos de que el trigger está desactivado
+  digitalWrite(trigPin, LOW);        // Nos aseguramos de que el trigger estï¿½ desactivado
   delayMicroseconds(2);              // Para asegurarnos de que el trigger esta LOW
   digitalWrite(trigPin, HIGH);       // Activamos el pulso de salida
-  delayMicroseconds(10);             // Esperamos 10µs. El pulso sigue active este tiempo
+  delayMicroseconds(10);             // Esperamos 10ï¿½s. El pulso sigue active este tiempo
   digitalWrite(trigPin, LOW);        // Cortamos el pulso y a esperar el echo
   duracion = pulseIn(echoPin, HIGH) ;
   //distancia = duracion / 2 / 29.1  ;
   distancia = duracion / (2 * 29.1)  ;
   //Serial.println(String(distancia) + " cm.") ;
-  int Limite = 20 ;                  // Medida en vacío del sensor
+  int Limite = 20 ;                  // Medida en vacï¿½o del sensor
   if ( distancia < Limite)
      digitalWrite ( led , HIGH) ;
   else
     digitalWrite( led , LOW) ;
-  delay (100) ;                  // Para limitar el número de mediciones
+  delay (100) ;                  // Para limitar el nï¿½mero de mediciones
 
   if (prevDist!=distancia){
     if (prevDist<distancia){
@@ -103,14 +107,14 @@ void negGirar(int grados){
     delayMicroseconds(velocidadMotor);
   }
 }
-void sentidoHorario() // en dirección de las agujas del reloj
+void sentidoHorario() // en direcciï¿½n de las agujas del reloj
 {
 contadorPasos++;
 if (contadorPasos >= cantidadPasos) contadorPasos = 0;
 escribirSalidas(contadorPasos);
 }
  
-void sentidoAntihorario()// en dirección contraria a las agujas del reloj
+void sentidoAntihorario()// en direcciï¿½n contraria a las agujas del reloj
 {
 contadorPasos--;
 if (contadorPasos < 0) contadorPasos = cantidadPasos - 1;

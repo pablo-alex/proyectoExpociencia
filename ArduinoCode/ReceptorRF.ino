@@ -1,3 +1,7 @@
+//El codigo del arduino receptor en el proyecto de SmartParking
+//Este dispositivo despues de obtener los datos del modulo de RadioFrecuencia se lo enviaba al servidor 
+//por medio de comunicacion serial 
+
 #include <VirtualWire.h>
  
 const int dataPin = 2;

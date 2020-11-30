@@ -26,6 +26,8 @@ _- Luego si quiere ejecutar el programa en su computadora, use el comando:_
 npm start
 ```
 
+![](pagina.png)
+
 ## Aclaraciones extras
 
 
